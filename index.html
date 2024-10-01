@@ -3,36 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aayush Jain Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="container">
-            <img src="profile.jpg" alt="Aayush Jain" class="profile-img">
-            <h1>Aayush Jain</h1>
+            <!-- Profile Photo -->
+            <img src="profile.jpg" alt="Aayush Jain Profile Photo" class="profile-photo">
+            <h1 class="typing">Aayush Jain</h1>
             <p>Computer Science Engineering Student</p>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="about">
+    <!-- About Me Section -->
+    <section id="about" class="fade-in">
         <div class="container">
             <h2>About Me</h2>
-            <p>Dynamic and dedicated Computer Science Engineering student seeking opportunities to apply academic knowledge and technical skills in a professional setting.</p>
+            <p>Dynamic and dedicated Computer Science Engineering student seeking opportunities to apply academic knowledge and technical skills in a professional setting. Eager to contribute to innovative projects and gain hands-on experience in software development, data analysis, and emerging technologies.</p>
         </div>
     </section>
 
-    <section id="education">
+    <!-- Education Section -->
+    <section id="education" class="fade-in">
         <div class="container">
             <h2>Education</h2>
             <ul>
@@ -42,48 +37,54 @@
         </div>
     </section>
 
-    <section id="skills">
+    <!-- Skills Section -->
+    <section id="skills" class="slide-in-left">
         <div class="container">
             <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>Blender</li>
-                <li>Unity</li>
-                <li>HTML, JavaScript, CSS</li>
-                <li>Figma (UI/UX)</li>
-            </ul>
+            <div class="skills-list">
+                <span>Python</span>
+                <span>Blender</span>
+                <span>Unity</span>
+                <span>HTML</span>
+                <span>JavaScript</span>
+                <span>CSS</span>
+                <span>C</span>
+                <span>C++</span>
+                <span>Figma (UI/UX)</span>
+            </div>
         </div>
     </section>
 
-    <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
         <div class="container">
             <h2>Projects</h2>
-            <div class="project">
+            <div class="project-item">
                 <h3>Tic-Tac-Toe Game</h3>
                 <p><strong>Technologies Used:</strong> HTML, JavaScript, CSS</p>
-                <p>Developed a web-based Tic-Tac-Toe game where two players can take turns marking the spaces in a 3x3 grid. The game includes win detection logic and a simple interface.</p>
+                <p>Developed a web-based Tic-Tac-Toe game with win detection and a simple interface.</p>
             </div>
-
-            <div class="project">
+            <div class="project-item">
                 <h3>Calculator App</h3>
                 <p><strong>Technologies Used:</strong> Android Studio (Java)</p>
-                <p>Created a fully functional calculator app for Android, which performs basic arithmetic operations with an intuitive user interface.</p>
+                <p>Fully functional calculator app performing basic arithmetic operations.</p>
             </div>
-
-            <div class="project">
+            <div class="project-item">
                 <h3>Fitness App UI/UX</h3>
                 <p><strong>Tools Used:</strong> Figma</p>
-                <p>Designed the UI/UX for a fitness app, focusing on user-friendly navigation and modern aesthetics.</p>
+                <p>Designed a modern, user-friendly fitness app interface for workout tracking.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
         <div class="container">
             <h2>Contact</h2>
-            <p>Bhiwani, Haryana, India</p>
             <p>Email: aayushjain1811@gmail.com</p>
             <p>Phone: +91 7027774700</p>
+            <p>Location: Bhiwani, Haryana, India</p>
+            <a href="mailto:aayushjain1811@gmail.com" class="button">Contact Me</a>
         </div>
     </section>
 
@@ -92,5 +93,20 @@
             <p>&copy; 2024 Aayush Jain. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Scroll Trigger for Animations -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top + window.pageYOffset;
+                if (scrollTop + window.innerHeight > elementTop) {
+                    el.classList.add('show');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
